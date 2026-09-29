@@ -1,0 +1,3 @@
+# H4
+# rotary captain, i.e. the boss has the lowest hierarchy, and remaining players increase 
+# their hierarchy position on 1

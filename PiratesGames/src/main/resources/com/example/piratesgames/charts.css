@@ -1,0 +1,12 @@
+/* === H === */
+.default-color0.chart-symbol { -fx-background-color: #e74c3c; } /* H11 */
+.default-color1.chart-symbol { -fx-background-color: #c0392b; } /* H3 */
+.default-color2.chart-symbol { -fx-background-color: #f39c12; } /* H4 */
+
+/* === P === */
+.default-color3.chart-symbol { -fx-background-color: #3498db; } /* P21 */
+.default-color4.chart-symbol { -fx-background-color: #2980b9; } /* P41 */
+
+/* === V === */
+.default-color5.chart-symbol { -fx-background-color: #2ecc71; } /* V5 */
+.default-color6.chart-symbol { -fx-background-color: #27ae60; } /* V6 */

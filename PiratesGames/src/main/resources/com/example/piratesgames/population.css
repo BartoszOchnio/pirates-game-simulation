@@ -1,0 +1,111 @@
+/* ===== Global ===== */
+.root {
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 13px;
+    -fx-background-color: #f6f7fb; /* lekkie tło jak dashboard */
+}
+
+/* ===== Top bar ===== */
+.header-bar {
+    -fx-background-color: white;
+    -fx-padding: 10 12 10 12;
+    -fx-border-color: #e6e9ee;
+    -fx-border-width: 0 0 1 0;
+}
+
+/* ===== Cards (TitledPane as cards) ===== */
+.titled-pane {
+    -fx-background-color: transparent;
+    -fx-text-fill: #222;
+}
+
+/* nagłówek karty */
+.titled-pane > .title {
+    -fx-background-color: #f4f6f8;
+    -fx-padding: 8 10 8 10;
+    -fx-font-weight: bold;
+    -fx-background-radius: 8 8 0 0;
+    -fx-border-color: #d9dde3;
+    -fx-border-width: 1 1 0 1;
+    -fx-border-radius: 8 8 0 0;
+}
+
+/* content karty */
+.titled-pane > *.content {
+    -fx-background-color: white;
+    -fx-padding: 10;
+    -fx-border-color: #d9dde3;
+    -fx-border-width: 0 1 1 1;
+    -fx-border-radius: 0 0 8 8;
+    -fx-background-radius: 0 0 8 8;
+}
+
+/* ===== Grid cells ===== */
+.grid-cell {
+    -fx-min-width: 56px;
+    -fx-min-height: 26px;
+    -fx-max-width: 56px;
+    -fx-max-height: 26px;
+
+    -fx-alignment: center;
+    -fx-padding: 0 6 0 6;
+
+    -fx-border-color: #e6e9ee;
+    -fx-border-width: 1;
+
+    -fx-background-color: white;
+    -fx-text-fill: #222;
+}
+
+/* delikatne podświetlenie */
+.grid-cell:hover {
+    -fx-background-color: #f2f7ff;
+}
+
+/* ===== Buttons ===== */
+.button {
+    -fx-background-radius: 8;
+    -fx-padding: 6 12 6 12;
+    -fx-background-color: #f4f6f8;
+    -fx-border-color: #d9dde3;
+    -fx-border-radius: 8;
+}
+
+.button:hover {
+    -fx-background-color: #eaf0ff;
+}
+
+.button:pressed {
+    -fx-background-color: #dfe8ff;
+}
+
+/* ===== Spinner (żeby nie wyglądał jak z 2005) ===== */
+.spinner {
+    -fx-background-color: white;
+    -fx-border-color: #d9dde3;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+}
+
+.spinner .text-field {
+    -fx-background-color: transparent;
+    -fx-padding: 6 10 6 10;
+}
+
+/* ===== Chart (na dole) ===== */
+.chart {
+    -fx-background-color: white;
+    -fx-border-color: #d9dde3;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-padding: 10;
+}
+
+.chart-plot-background {
+    -fx-background-color: #ffffff;
+}
+
+.chart-vertical-grid-lines,
+.chart-horizontal-grid-lines {
+    -fx-stroke: #eef1f6;
+}

@@ -1,0 +1,8 @@
+# kD voting strategy
+#   0 <=k<=8
+# kD rule
+
+if the number of players voting "No" in the previous game is <= k 
+  then "Yes"
+    else "No"
+    

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.StackedAreaChart?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<?import javafx.scene.chart.ScatterChart?>
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.piratesgames.ResultsController"
+            prefWidth="1200" prefHeight="800">
+
+    <!-- GÓRA -->
+    <top>
+        <HBox spacing="10" alignment="CENTER_LEFT">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+
+            <Label text="Boat:"/>
+            <ComboBox fx:id="boatSelector"/>
+        </HBox>
+    </top>
+
+    <!-- ŚRODEK -->
+    <center>
+        <VBox spacing="15">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+
+            <!-- Wykres 1 -->
+            <LineChart fx:id="roundChart">
+                <xAxis>
+                    <NumberAxis label="Game"/>
+                </xAxis>
+                <yAxis>
+                    <NumberAxis fx:id="roundYAxis" label="Last round"/>
+                </yAxis>
+            </LineChart>
+
+
+
+            <!-- Wykres 2 -->
+            <ScatterChart fx:id="dnaChart">
+                <xAxis>
+                    <NumberAxis label="Game"/>
+                </xAxis>
+                <yAxis>
+                    <NumberAxis fx:id="dnaYAxis" label="DNA"/>
+                </yAxis>
+            </ScatterChart>
+
+            <!-- Wykres 3 -->
+            <LineChart fx:id="fairnessChart">
+                <xAxis>
+                    <NumberAxis label="Game"/>
+                </xAxis>
+                <yAxis>
+                    <NumberAxis label="Fairness"/>
+                </yAxis>
+            </LineChart>
+
+        </VBox>
+    </center>
+
+</BorderPane>

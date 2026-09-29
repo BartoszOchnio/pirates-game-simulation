@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.piratesgames.PopulationController"
+            prefWidth="1400" prefHeight="900">
+
+    <!-- GÓRNY PASEK -->
+    <top>
+        <HBox spacing="10" alignment="CENTER_LEFT" styleClass="header-bar">
+            <padding>
+                <Insets top="10" right="12" bottom="10" left="12"/>
+            </padding>
+
+            <Label text="Game:"/>
+            <Spinner fx:id="gameSpinner" prefWidth="90"/>
+
+            <Region HBox.hgrow="ALWAYS"/>
+
+            <Button text="Prev" fx:id="prevBtn"/>
+            <Button text="Next" fx:id="nextBtn"/>
+        </HBox>
+    </top>
+
+    <!-- ŚRODEK: 5 tabelek w układzie 2 + 3 -->
+    <center>
+        <VBox spacing="12">
+            <padding>
+                <Insets top="12" right="12" bottom="12" left="12"/>
+            </padding>
+
+            <!-- GÓRA: 2 karty -->
+            <GridPane hgap="12" vgap="12">
+                <columnConstraints>
+                    <ColumnConstraints percentWidth="50"/>
+                    <ColumnConstraints percentWidth="50"/>
+                </columnConstraints>
+
+                <TitledPane text="Last round" collapsible="false"
+                            GridPane.rowIndex="0" GridPane.columnIndex="0">
+                    <content>
+                        <GridPane fx:id="lastRoundGrid" gridLinesVisible="false"/>
+                    </content>
+                </TitledPane>
+
+                <TitledPane text="F total" collapsible="false"
+                            GridPane.rowIndex="0" GridPane.columnIndex="1">
+                    <content>
+                        <GridPane fx:id="ftotalGrid" gridLinesVisible="false"/>
+                    </content>
+                </TitledPane>
+            </GridPane>
+
+            <!-- DÓŁ: 3 karty -->
+            <GridPane hgap="12" vgap="12">
+                <columnConstraints>
+                    <ColumnConstraints percentWidth="33.33"/>
+                    <ColumnConstraints percentWidth="33.33"/>
+                    <ColumnConstraints percentWidth="33.33"/>
+                </columnConstraints>
+
+                <TitledPane text="H algo" collapsible="false"
+                            GridPane.rowIndex="0" GridPane.columnIndex="0">
+                    <content>
+                        <GridPane fx:id="hGrid" gridLinesVisible="false"/>
+                    </content>
+                </TitledPane>
+
+                <TitledPane text="P algo" collapsible="false"
+                            GridPane.rowIndex="0" GridPane.columnIndex="1">
+                    <content>
+                        <GridPane fx:id="pGrid" gridLinesVisible="false"/>
+                    </content>
+                </TitledPane>
+
+                <TitledPane text="V algo" collapsible="false"
+                            GridPane.rowIndex="0" GridPane.columnIndex="2">
+                    <content>
+                        <GridPane fx:id="vGrid" gridLinesVisible="false"/>
+                    </content>
+                </TitledPane>
+            </GridPane>
+        </VBox>
+    </center>
+
+    <!-- DÓŁ: wykres -->
+    <bottom>
+        <VBox spacing="8">
+            <padding>
+                <Insets top="0" right="12" bottom="12" left="12"/>
+            </padding>
+
+            <LineChart fx:id="popFChart" prefHeight="280">
+                <xAxis>
+                    <NumberAxis label="Game"/>
+                </xAxis>
+                <yAxis>
+                    <NumberAxis label="F total"/>
+                </yAxis>
+            </LineChart>
+        </VBox>
+    </bottom>
+
+</BorderPane>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="22d80a18-53ac-4075-bf68-31199d22ad56" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/com/example/piratesgames/PiratesGamesApp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/com/example/piratesgames/PiratesGamesController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/com/example/piratesgames/PopulationController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/com/example/piratesgames/ResultsController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/com/example/piratesgames/conf/ConfigIO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/com/example/piratesgames/conf/SimulationConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/com/example/piratesgames/core/Boat.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/com/example/piratesgames/core/BoatDNA.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/com/example/piratesgames/core/BoatResultsIO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/com/example/piratesgames/core/Competition.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/com/example/piratesgames/core/CompetitionResultsIO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/com/example/piratesgames/core/Fairness.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/com/example/piratesgames/core/GameHistory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/com/example/piratesgames/core/Matrix.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/com/example/piratesgames/core/MatrixLoader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/com/example/piratesgames/core/Player.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/com/example/piratesgames/core/SimulationEngine.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/com/example/piratesgames/core/SingleGame.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/com/example/piratesgames/core/StrategyMap.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/com/example/piratesgames/strategies/v/V5.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/com/example/piratesgames/strategies/v/V6.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/module-info.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/resources/com/example/piratesgames/charts.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/resources/com/example/piratesgames/game_GUI.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/resources/com/example/piratesgames/hello-view.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/resources/com/example/piratesgames/population.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/resources/com/example/piratesgames/population_view.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/resources/com/example/piratesgames/results_view.fxml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 8
+}]]></component>
+  <component name="ProjectId" id="3Jdqht7Ik2TdwIhB4WasbPAMKi1" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="22d80a18-53ac-4075-bf68-31199d22ad56" name="Changes" comment="" />
+      <created>1790001414392</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1790001414392</updated>
+    </task>
+    <servers />
+  </component>
+</project>

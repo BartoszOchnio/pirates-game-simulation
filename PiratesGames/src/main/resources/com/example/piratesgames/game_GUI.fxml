@@ -1,0 +1,868 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.control.Spinner?>
+<?import java.lang.Integer?>
+<?import javafx.scene.control.SpinnerValueFactory?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.collections.FXCollections?>
+<?import java.lang.String?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ScrollPane?>
+<ScrollPane xmlns="http://javafx.com/javafx/19"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.piratesgames.PiratesGamesController"
+            fitToWidth="true"
+            pannable="true">
+
+    <content>
+        <HBox spacing="12">
+            <padding>
+                <Insets top="12" right="12" bottom="12" left="12"/>
+            </padding>
+
+    <!-- LEWA KOLUMNA -->
+    <VBox spacing="10" prefWidth="380">
+        <?import javafx.scene.control.*?>
+        <?import javafx.scene.layout.*?>
+        <?import javafx.geometry.*?>
+        <?import javafx.collections.*?>
+
+        <VBox spacing="10" prefWidth="380">
+
+            <!-- 1) GAME PARAMETERS -->
+            <TitledPane text="Game parameters" expanded="true">
+                <content>
+                    <GridPane hgap="8" vgap="6">
+                        <columnConstraints>
+                            <ColumnConstraints halignment="RIGHT" minWidth="130"/>
+                            <ColumnConstraints hgrow="ALWAYS"/>
+                        </columnConstraints>
+
+                        <!-- K, M, N -->
+                        <Label text="K (#boats)" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                        <Spinner editable="true" fx:id="kSpinner" GridPane.rowIndex="0" GridPane.columnIndex="1">
+                            <valueFactory>
+                                <SpinnerValueFactory.IntegerSpinnerValueFactory min="1" max="200" initialValue="16"/>
+                            </valueFactory>
+                        </Spinner>
+
+                        <Label text="M (#rows)" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                        <Spinner editable="true" fx:id="mSpinner" GridPane.rowIndex="1" GridPane.columnIndex="1">
+                            <valueFactory>
+                                <SpinnerValueFactory.IntegerSpinnerValueFactory min="1" max="50" initialValue="4"/>
+                            </valueFactory>
+                        </Spinner>
+
+                        <Label text="N (#cols)" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                        <Spinner editable="true" fx:id="nSpinner" GridPane.rowIndex="2" GridPane.columnIndex="1">
+                            <valueFactory>
+                                <SpinnerValueFactory.IntegerSpinnerValueFactory min="1" max="50" initialValue="4"/>
+                            </valueFactory>
+                        </Spinner>
+
+                        <!-- coins, steps, games -->
+                        <Label text="C (#coins)" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+                        <Spinner editable="true" fx:id="coinsSpinner" GridPane.rowIndex="3" GridPane.columnIndex="1">
+                            <valueFactory>
+                                <SpinnerValueFactory.IntegerSpinnerValueFactory min="0" max="100000" initialValue="100"/>
+                            </valueFactory>
+                        </Spinner>
+
+                        <Label text="q_step (#quant step)" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+                        <Spinner editable="true" fx:id="qStepSpinner" GridPane.rowIndex="4" GridPane.columnIndex="1">
+                            <valueFactory>
+                                <SpinnerValueFactory.IntegerSpinnerValueFactory min="1" max="1000" initialValue="1"/>
+                            </valueFactory>
+                        </Spinner>
+
+                        <Label text="T (#games)" GridPane.rowIndex="5" GridPane.columnIndex="0"/>
+                        <Spinner editable="true" fx:id="gamesSpinner" GridPane.rowIndex="5" GridPane.columnIndex="1">
+                            <valueFactory>
+                                <SpinnerValueFactory.IntegerSpinnerValueFactory min="1" max="1000000" initialValue="50"/>
+                            </valueFactory>
+                        </Spinner>
+
+                        <Label text="del_T (#agree/win)" GridPane.rowIndex="6" GridPane.columnIndex="0"/>
+                        <Spinner editable="true" fx:id="delTSpinner" GridPane.rowIndex="6" GridPane.columnIndex="1">
+                            <valueFactory>
+                                <SpinnerValueFactory.IntegerSpinnerValueFactory min="0" max="1000" initialValue="6"/>
+                            </valueFactory>
+                        </Spinner>
+
+                        <Label text="del_t (#del iter)" GridPane.rowIndex="7" GridPane.columnIndex="0"/>
+                        <Spinner editable="true" fx:id="delSmallTSpinner" GridPane.rowIndex="7" GridPane.columnIndex="1">
+                            <valueFactory>
+                                <SpinnerValueFactory.IntegerSpinnerValueFactory min="0" max="1000" initialValue="2"/>
+                            </valueFactory>
+                        </Spinner>
+                    </GridPane>
+                </content>
+            </TitledPane>
+            <!-- 2) LIFE AWARENESS -->
+            <TitledPane text="Life awareness" expanded="true">
+                <content>
+                    <GridPane hgap="8" vgap="6">
+                        <columnConstraints>
+                            <ColumnConstraints halignment="RIGHT" minWidth="130"/>
+                            <ColumnConstraints hgrow="ALWAYS"/>
+                        </columnConstraints>
+
+                        <Label text="single_game_cost" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                        <Spinner editable="true" fx:id="singleGameCostSpinner" GridPane.rowIndex="0" GridPane.columnIndex="1">
+                            <valueFactory>
+                                <SpinnerValueFactory.IntegerSpinnerValueFactory min="0" max="100000" initialValue="1"/>
+                            </valueFactory>
+                        </Spinner>
+
+                        <Label text="initial_credit" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                        <Spinner editable="true" fx:id="initialCreditSpinner" GridPane.rowIndex="1" GridPane.columnIndex="1">
+                            <valueFactory>
+                                <SpinnerValueFactory.IntegerSpinnerValueFactory min="0" max="100000" initialValue="20"/>
+                            </valueFactory>
+                        </Spinner>
+                    </GridPane>
+                </content>
+            </TitledPane>
+
+
+        </VBox>
+
+        <!-- 4) COMPETITION + MUTATION -->
+        <TitledPane text="Competition" expanded="true">
+            <content>
+                <VBox spacing="10">
+
+
+                    <!-- Selection method -->
+                    <HBox spacing="16" alignment="CENTER_LEFT">
+                        <RadioButton fx:id="tournamentRadio" text="tournament"/>
+                        <RadioButton fx:id="wheelRouletteRadio" text="wheel"/>
+                    </HBox>
+
+                    <Separator/>
+
+                    <!-- Crossover -->
+                    <VBox spacing="6">
+                        <GridPane hgap="8" vgap="6">
+                            <columnConstraints>
+                                <ColumnConstraints hgrow="ALWAYS" minWidth="120"/>
+                                <ColumnConstraints hgrow="ALWAYS" minWidth="70"/>
+                                <ColumnConstraints hgrow="ALWAYS" minWidth="70"/>
+                                <ColumnConstraints hgrow="ALWAYS" minWidth="70"/>
+                            </columnConstraints>
+
+                            <Label text="cross-prob" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                            <Label text="from" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+                            <Label text="to" GridPane.rowIndex="0" GridPane.columnIndex="2"/>
+                            <Label text="step" GridPane.rowIndex="0" GridPane.columnIndex="3"/>
+
+                            <TextField fx:id="crossoverNameField" text="0.0"
+                                       GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                            <TextField fx:id="crossoverFromField" text="0.50"
+                                       GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+                            <TextField fx:id="crossoverToField" text="0.80"
+                                       GridPane.rowIndex="1" GridPane.columnIndex="2"/>
+                            <TextField fx:id="crossoverStepField" text="0.10"
+                                       GridPane.rowIndex="1" GridPane.columnIndex="3"/>
+                        </GridPane>
+                    </VBox>
+
+                    <Separator/>
+
+                    <!-- Mutation -->
+                    <VBox spacing="6">
+                        <GridPane hgap="8" vgap="6">
+                            <columnConstraints>
+                                <ColumnConstraints minWidth="40"/>
+                                <ColumnConstraints hgrow="ALWAYS" minWidth="120"/>
+                                <ColumnConstraints hgrow="ALWAYS" minWidth="70"/>
+                                <ColumnConstraints hgrow="ALWAYS" minWidth="70"/>
+                                <ColumnConstraints hgrow="ALWAYS" minWidth="70"/>
+                            </columnConstraints>
+
+                            <Label text="" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                            <Label text="prob_mut" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+                            <Label text="from" GridPane.rowIndex="0" GridPane.columnIndex="2"/>
+                            <Label text="to" GridPane.rowIndex="0" GridPane.columnIndex="3"/>
+                            <Label text="step" GridPane.rowIndex="0" GridPane.columnIndex="4"/>
+
+                            <!-- H -->
+                            <Label text="H" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                            <TextField fx:id="hMutNameField" text="0.0"
+                                       GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+                            <TextField fx:id="hMutFromField" text="0.0"
+                                       GridPane.rowIndex="1" GridPane.columnIndex="2"/>
+                            <TextField fx:id="hMutToField" text="0.5"
+                                       GridPane.rowIndex="1" GridPane.columnIndex="3"/>
+                            <TextField fx:id="hMutStepField" text="0.1"
+                                       GridPane.rowIndex="1" GridPane.columnIndex="4"/>
+
+                            <!-- P -->
+                            <Label text="P" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                            <TextField fx:id="pMutNameField" text="0.0"
+                                       GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+                            <TextField fx:id="pMutFromField" text="0.0"
+                                       GridPane.rowIndex="2" GridPane.columnIndex="2"/>
+                            <TextField fx:id="pMutToField" text="0.3"
+                                       GridPane.rowIndex="2" GridPane.columnIndex="3"/>
+                            <TextField fx:id="pMutStepField" text="0.1"
+                                       GridPane.rowIndex="2" GridPane.columnIndex="4"/>
+
+                            <!-- PR -->
+                            <Label text="PR" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+                            <TextField fx:id="prMutNameField" text="0.0"
+                                       GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+                            <TextField fx:id="prMutFromField" text="0.0"
+                                       GridPane.rowIndex="3" GridPane.columnIndex="2"/>
+                            <TextField fx:id="prMutToField" text="0.3"
+                                       GridPane.rowIndex="3" GridPane.columnIndex="3"/>
+                            <TextField fx:id="prMutStepField" text="0.1"
+                                       GridPane.rowIndex="3" GridPane.columnIndex="4"/>
+
+                            <!-- V -->
+                            <Label text="V" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+                            <TextField fx:id="vMutNameField" text="0.0"
+                                       GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+                            <TextField fx:id="vMutFromField" text="0.0"
+                                       GridPane.rowIndex="4" GridPane.columnIndex="2"/>
+                            <TextField fx:id="vMutToField" text="0.5"
+                                       GridPane.rowIndex="4" GridPane.columnIndex="3"/>
+                            <TextField fx:id="vMutStepField" text="0.1"
+                                       GridPane.rowIndex="4" GridPane.columnIndex="4"/>
+                        </GridPane>
+                    </VBox>
+
+                </VBox>
+            </content>
+        </TitledPane>
+
+
+        <!-- SEED / DEBUG / EXPERIMENTS -->
+        <TitledPane text="Run settings" expanded="true">
+            <content>
+                <VBox spacing="10">
+
+                    <!-- clock seed / custom -->
+                    <VBox spacing="6">
+                        <Label text="Seed"/>
+                        <HBox spacing="12" alignment="CENTER_LEFT">
+                            <RadioButton fx:id="seedClockRadio" text="clock seed" selected="true"/>
+                            <RadioButton fx:id="seedCustomRadio" text="custom"/>
+                            <TextField fx:id="customSeedField" text="12345" prefColumnCount="8" disable="true"/>
+                        </HBox>
+                        <Label text="(Enable custom to type seed)" style="-fx-font-size: 10; -fx-opacity: 0.7;"/>
+                    </VBox>
+
+                    <Separator/>
+
+                    <!-- debug tests -->
+                    <VBox spacing="6">
+                        <Label text="Debug"/>
+                        <VBox spacing="4" style="-fx-padding: 0 0 0 8;">
+                            <CheckBox fx:id="test1CheckBox" text="test_1"/>
+                            <CheckBox fx:id="test2CheckBox" text="test_2"/>
+                            <CheckBox fx:id="test3CheckBox" text="test_3"/>
+                            <CheckBox fx:id="test4CheckBox" text="test_4"/>
+                        </VBox>
+                    </VBox>
+
+                    <Separator/>
+
+                    <!-- num of experiments -->
+                    <GridPane hgap="8" vgap="6">
+                        <columnConstraints>
+                            <ColumnConstraints halignment="RIGHT" minWidth="150"/>
+                            <ColumnConstraints hgrow="ALWAYS"/>
+                        </columnConstraints>
+
+                        <Label text="num of experiments" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                        <Spinner editable="true" fx:id="numExperimentsSpinner" GridPane.rowIndex="0" GridPane.columnIndex="1">
+                            <valueFactory>
+                                <SpinnerValueFactory.IntegerSpinnerValueFactory min="1" max="1000000" initialValue="1"/>
+                            </valueFactory>
+                        </Spinner>
+                    </GridPane>
+
+                </VBox>
+            </content>
+        </TitledPane>
+    </VBox>
+
+    <!-- ŚRODKOWA KOLUMNA -->
+    <VBox spacing="10" prefWidth="420">
+        <!-- METRICS OF FAIRNESS -->
+        <TitledPane text="Metrics of fairness" expanded="true">
+            <content>
+                <GridPane hgap="8" vgap="6">
+                    <columnConstraints>
+                        <ColumnConstraints halignment="LEFT" minWidth="220"/>
+                        <ColumnConstraints halignment="RIGHT" minWidth="80"/>
+                    </columnConstraints>
+
+                    <!-- Header -->
+                    <Label text="Metric" style="-fx-font-weight: bold;"
+                           GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                    <Label text="Weight α" style="-fx-font-weight: bold;"
+                           GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+                    <!-- envy-freeness -->
+                    <CheckBox fx:id="envyCheckBox" text="envy-freeness"
+                              selected="true"
+                              GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                    <TextField fx:id="envyWeightField" text="0.25"
+                               GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+                    <!-- egalitarian -->
+                    <CheckBox fx:id="egalitarianCheckBox" text="egalitarian"
+                              selected="true"
+                              GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                    <TextField fx:id="egalitarianWeightField" text="0.25"
+                               GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+                    <!-- proportionality -->
+                    <CheckBox fx:id="proportionalityCheckBox" text="proportionality"
+                              selected="true"
+                              GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+                    <TextField fx:id="proportionalityWeightField" text="0.25"
+                               GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+                    <!-- individual rationality -->
+                    <CheckBox fx:id="individualRationalityCheckBox"
+                              text="individual rationality"
+                              selected="true"
+                              GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+                    <TextField fx:id="individualRationalityWeightField" text="0.25"
+                               GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+
+
+                    <CheckBox fx:id="utilitarianCheckBox" text="utilitarian"
+                              GridPane.rowIndex="6" GridPane.columnIndex="0"/>
+                    <TextField fx:id="utilitarianWeightField" text="0"
+                               GridPane.rowIndex="6" GridPane.columnIndex="1"/>
+
+
+
+                </GridPane>
+            </content>
+        </TitledPane>
+        <TitledPane text="Risk model" expanded="true">
+            <content>
+                <VBox spacing="10">
+
+                    <!-- p_i -->
+                    <VBox spacing="4">
+                        <Label text="p_i    # survival probability"/>
+                        <GridPane hgap="6" vgap="6">
+                            <columnConstraints>
+                                <ColumnConstraints minWidth="40"/>
+                                <ColumnConstraints minWidth="40"/>
+                                <ColumnConstraints minWidth="40"/>
+                                <ColumnConstraints minWidth="40"/>
+                                <ColumnConstraints minWidth="40"/>
+                                <ColumnConstraints minWidth="40"/>
+                                <ColumnConstraints minWidth="40"/>
+                                <ColumnConstraints minWidth="40"/>
+                                <ColumnConstraints minWidth="40"/>
+                            </columnConstraints>
+
+                            <TextField fx:id="p1" text="0.95" GridPane.columnIndex="0"/>
+                            <TextField fx:id="p2" text="0.92" GridPane.columnIndex="1"/>
+                            <TextField fx:id="p3" text="0.90" GridPane.columnIndex="2"/>
+                            <TextField fx:id="p4" text="0.88" GridPane.columnIndex="3"/>
+                            <TextField fx:id="p5" text="0.85" GridPane.columnIndex="4"/>
+                            <TextField fx:id="p6" text="0.82" GridPane.columnIndex="5"/>
+                            <TextField fx:id="p7" text="0.80" GridPane.columnIndex="6"/>
+                            <TextField fx:id="p8" text="0.78" GridPane.columnIndex="7"/>
+                            <TextField fx:id="p9" text="0.75" GridPane.columnIndex="8"/>
+                        </GridPane>
+                    </VBox>
+
+                    <!-- del_i -->
+                    <VBox spacing="4">
+                        <Label text="del_i    # discount factor"/>
+                        <GridPane hgap="6" vgap="6">
+                            <columnConstraints>
+                                <ColumnConstraints minWidth="40"/>
+                                <ColumnConstraints minWidth="40"/>
+                                <ColumnConstraints minWidth="40"/>
+                                <ColumnConstraints minWidth="40"/>
+                                <ColumnConstraints minWidth="40"/>
+                                <ColumnConstraints minWidth="40"/>
+                                <ColumnConstraints minWidth="40"/>
+                                <ColumnConstraints minWidth="40"/>
+                                <ColumnConstraints minWidth="40"/>
+                            </columnConstraints>
+
+                            <TextField fx:id="del1" text="0.99" GridPane.columnIndex="0"/>
+                            <TextField fx:id="del2" text="0.98" GridPane.columnIndex="1"/>
+                            <TextField fx:id="del3" text="0.97" GridPane.columnIndex="2"/>
+                            <TextField fx:id="del4" text="0.96" GridPane.columnIndex="3"/>
+                            <TextField fx:id="del5" text="0.95" GridPane.columnIndex="4"/>
+                            <TextField fx:id="del6" text="0.94" GridPane.columnIndex="5"/>
+                            <TextField fx:id="del7" text="0.93" GridPane.columnIndex="6"/>
+                            <TextField fx:id="del8" text="0.92" GridPane.columnIndex="7"/>
+                            <TextField fx:id="del9" text="0.90" GridPane.columnIndex="8"/>
+                        </GridPane>
+                    </VBox>
+
+                    <!-- alpha_i -->
+                    <VBox spacing="4">
+                        <Label text="alpha_i    # aversion to risk"/>
+                        <GridPane hgap="6" vgap="6">
+                            <columnConstraints>
+                                <ColumnConstraints minWidth="40"/>
+                                <ColumnConstraints minWidth="40"/>
+                                <ColumnConstraints minWidth="40"/>
+                                <ColumnConstraints minWidth="40"/>
+                                <ColumnConstraints minWidth="40"/>
+                                <ColumnConstraints minWidth="40"/>
+                                <ColumnConstraints minWidth="40"/>
+                                <ColumnConstraints minWidth="40"/>
+                                <ColumnConstraints minWidth="40"/>
+                            </columnConstraints>
+
+                            <TextField fx:id="alpha1" text="0.10" GridPane.columnIndex="0"/>
+                            <TextField fx:id="alpha2" text="0.15" GridPane.columnIndex="1"/>
+                            <TextField fx:id="alpha3" text="0.20" GridPane.columnIndex="2"/>
+                            <TextField fx:id="alpha4" text="0.25" GridPane.columnIndex="3"/>
+                            <TextField fx:id="alpha5" text="0.30" GridPane.columnIndex="4"/>
+                            <TextField fx:id="alpha6" text="0.35" GridPane.columnIndex="5"/>
+                            <TextField fx:id="alpha7" text="0.40" GridPane.columnIndex="6"/>
+                            <TextField fx:id="alpha8" text="0.45" GridPane.columnIndex="7"/>
+                            <TextField fx:id="alpha9" text="0.50" GridPane.columnIndex="8"/>
+                        </GridPane>
+                    </VBox>
+
+                    <!-- t_i -->
+                    <VBox spacing="4">
+                        <Label text="t_i    # time to delay"/>
+                        <GridPane hgap="6" vgap="6">
+                            <columnConstraints>
+                                <ColumnConstraints minWidth="40"/>
+                                <ColumnConstraints minWidth="40"/>
+                                <ColumnConstraints minWidth="40"/>
+                                <ColumnConstraints minWidth="40"/>
+                                <ColumnConstraints minWidth="40"/>
+                                <ColumnConstraints minWidth="40"/>
+                                <ColumnConstraints minWidth="40"/>
+                                <ColumnConstraints minWidth="40"/>
+                                <ColumnConstraints minWidth="40"/>
+                            </columnConstraints>
+
+                            <TextField fx:id="t1" text="1" GridPane.columnIndex="0"/>
+                            <TextField fx:id="t2" text="1" GridPane.columnIndex="1"/>
+                            <TextField fx:id="t3" text="2" GridPane.columnIndex="2"/>
+                            <TextField fx:id="t4" text="2" GridPane.columnIndex="3"/>
+                            <TextField fx:id="t5" text="3" GridPane.columnIndex="4"/>
+                            <TextField fx:id="t6" text="3" GridPane.columnIndex="5"/>
+                            <TextField fx:id="t7" text="4" GridPane.columnIndex="6"/>
+                            <TextField fx:id="t8" text="4" GridPane.columnIndex="7"/>
+                            <TextField fx:id="t9" text="5" GridPane.columnIndex="8"/>
+                        </GridPane>
+                    </VBox>
+
+                </VBox>
+            </content>
+        </TitledPane>
+
+        <!-- P-SCORE -->
+        <TitledPane text="P-score" expanded="true">
+            <content>
+                <VBox spacing="10">
+
+                    <!-- alp_EMA -->
+                    <GridPane hgap="8" vgap="6">
+                        <columnConstraints>
+                            <ColumnConstraints minWidth="90"/>
+                            <ColumnConstraints minWidth="70"/>
+                            <ColumnConstraints hgrow="ALWAYS" minWidth="180"/>
+                        </columnConstraints>
+
+                        <Label text="alp_EMA" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                        <TextField fx:id="alpEmaField" text="0.20" prefColumnCount="4"
+                                   GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+                        <Label text="# EMA coefficient" GridPane.rowIndex="0" GridPane.columnIndex="2"/>
+                    </GridPane>
+
+                    <!-- beta gamma eta -->
+                    <GridPane hgap="8" vgap="6">
+                        <columnConstraints>
+                            <ColumnConstraints minWidth="90"/>
+                            <ColumnConstraints minWidth="70"/>
+                            <ColumnConstraints hgrow="ALWAYS" minWidth="180"/>
+                        </columnConstraints>
+
+                        <Label text="beta" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                        <TextField fx:id="betaField" text="0.40" prefColumnCount="4"
+                                   GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+                        <Label text="# aggregation weights" GridPane.rowIndex="0" GridPane.columnIndex="2"/>
+
+                        <Label text="gamma" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                        <TextField fx:id="gammaField" text="0.40" prefColumnCount="4"
+                                   GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+                        <Label text="# must sum to 1" GridPane.rowIndex="1" GridPane.columnIndex="2"/>
+
+                        <Label text="eta" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                        <TextField fx:id="etaField" text="0.20" prefColumnCount="4"
+                                   GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+                    </GridPane>
+
+                    <!-- del_T_aggr -->
+                    <GridPane hgap="8" vgap="6">
+                        <columnConstraints>
+                            <ColumnConstraints minWidth="90"/>
+                            <ColumnConstraints minWidth="70"/>
+                            <ColumnConstraints hgrow="ALWAYS" minWidth="180"/>
+                        </columnConstraints>
+
+                        <Label text="del_T_aggr" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                        <TextField fx:id="delTAggrField" text="9" prefColumnCount="4"
+                                   GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+                    </GridPane>
+
+                </VBox>
+            </content>
+        </TitledPane>
+
+        <!-- FAIR FLOOR / BOSS EXEC -->
+        <TitledPane text="Additional parameters" expanded="true">
+            <content>
+                <VBox spacing="8">
+                    <GridPane hgap="8" vgap="6">
+                        <columnConstraints>
+                            <ColumnConstraints minWidth="90"/>
+                            <ColumnConstraints minWidth="140"/>
+                            <ColumnConstraints minWidth="70"/>
+                            <ColumnConstraints minWidth="70"/>
+                            <ColumnConstraints minWidth="70"/>
+                        </columnConstraints>
+
+                        <!-- Header -->
+                        <Label text="" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                        <Label text="" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+                        <Label text="from" GridPane.rowIndex="0" GridPane.columnIndex="2"/>
+                        <Label text="to" GridPane.rowIndex="0" GridPane.columnIndex="3"/>
+                        <Label text="step" GridPane.rowIndex="0" GridPane.columnIndex="4"/>
+
+                        <!-- fair_floor -->
+                        <Label text="fair_floor" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                        <TextField fx:id="fairFloorField" text="0"
+                                   GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+                        <TextField fx:id="ffFromField" text="0"
+                                   GridPane.rowIndex="1" GridPane.columnIndex="2"/>
+                        <TextField fx:id="ffToField" text="10"
+                                   GridPane.rowIndex="1" GridPane.columnIndex="3"/>
+                        <TextField fx:id="ffStepField" text="1"
+                                   GridPane.rowIndex="1" GridPane.columnIndex="4"/>
+
+                        <!-- prob_boss_exec -->
+                        <Label text="prob_boss_exec" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                        <TextField fx:id="probBossExecField" text="1.0"
+                                   GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+                        <TextField fx:id="pbeFromField" text="0"
+                                   GridPane.rowIndex="2" GridPane.columnIndex="2"/>
+                        <TextField fx:id="pbeToField" text="0"
+                                   GridPane.rowIndex="2" GridPane.columnIndex="3"/>
+                        <TextField fx:id="pbeStepField" text="0"
+                                   GridPane.rowIndex="2" GridPane.columnIndex="4"/>
+                    </GridPane>
+                </VBox>
+            </content>
+        </TitledPane>
+
+
+
+    </VBox>
+
+    <!-- PRAWA KOLUMNA -->
+    <VBox spacing="10" prefWidth="520">
+        <!-- H ALGOS -->
+        <TitledPane text="H algos" expanded="true">
+            <content>
+                <VBox spacing="10">
+
+                    <!-- start / continuation -->
+                    <!-- start (algorithm) / continuation (iterations) -->
+                    <GridPane hgap="8" vgap="6">
+                        <columnConstraints>
+                            <ColumnConstraints halignment="RIGHT" minWidth="90"/>
+                            <ColumnConstraints hgrow="ALWAYS"/>
+                            <ColumnConstraints halignment="RIGHT" minWidth="110"/>
+                            <ColumnConstraints hgrow="ALWAYS"/>
+                        </columnConstraints>
+
+                        <!-- START: algorithm -->
+                        <Label text="start" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                        <ChoiceBox fx:id="hStartChoice" GridPane.rowIndex="0" GridPane.columnIndex="1">
+                            <items>
+                                <FXCollections fx:factory="observableArrayList">
+                                    <String fx:value="H1 — random"/>
+                                    <String fx:value="H2 — performance based reordering"/>
+                                    <String fx:value="H3 — fixed stock hierarchy"/>
+                                    <String fx:value="H4 — rotatory captain"/>
+                                </FXCollections>
+                            </items>
+                        </ChoiceBox>
+
+                        <!-- CONTINUATION: integer -->
+                        <Label text="continuation" GridPane.rowIndex="0" GridPane.columnIndex="2"/>
+                        <Spinner editable="true" fx:id="hContinuationSpinner"
+                                 GridPane.rowIndex="0"
+                                 GridPane.columnIndex="3">
+                            <valueFactory>
+                                <SpinnerValueFactory.IntegerSpinnerValueFactory
+                                        min="1" max="1000000" initialValue="100"/>
+                            </valueFactory>
+                        </Spinner>
+                    </GridPane>
+
+                    <Separator/>
+                    <!-- H list -->
+                    <VBox spacing="8">
+
+                        <CheckBox fx:id="h1CheckBox" text="H1 — performance-based" selected="true"/>
+                        <CheckBox fx:id="h2CheckBox" text="H2 — random shuffle" />
+                        <CheckBox fx:id="h3CheckBox" text="H3 — rotatory captain" selected="true"/>
+                        <CheckBox fx:id="h4CheckBox" text="H4 — fixed hierarchy" selected="true"/>
+                        <CheckBox fx:id="h5CheckBox" text="H5 — hybrid"/>
+
+                        <!-- H5 parameters -->
+                        <GridPane hgap="8" vgap="6"
+                                  visible="false" managed="false"
+                                  fx:id="h5ParamsPane">
+                            <columnConstraints>
+                                <ColumnConstraints minWidth="70"/>
+                                <ColumnConstraints minWidth="60"/>
+                                <ColumnConstraints minWidth="70"/>
+                                <ColumnConstraints minWidth="60"/>
+                            </columnConstraints>
+
+                            <Label text="pr_H1" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                            <TextField fx:id="prH1Field" text="0.0"
+                                       prefColumnCount="4"
+                                       GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+                            <Label text="pr_H2" GridPane.rowIndex="0" GridPane.columnIndex="2"/>
+                            <TextField fx:id="prH2Field" text="0.20"
+                                       prefColumnCount="4"
+                                       GridPane.rowIndex="0" GridPane.columnIndex="3"/>
+
+                            <Label text="pr_H3" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                            <TextField fx:id="prH3Field" text="0.0"
+                                       prefColumnCount="4"
+                                       GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+                            <Label text="pr_H4" GridPane.rowIndex="1" GridPane.columnIndex="2"/>
+                            <TextField fx:id="prH4Field" text="0.80"
+                                       prefColumnCount="4"
+                                       GridPane.rowIndex="1" GridPane.columnIndex="3"/>
+                        </GridPane>
+
+                    </VBox>
+                </VBox>
+            </content>
+        </TitledPane>
+        <!-- P ALGOS -->
+        <TitledPane text="P algos" expanded="true">
+            <content>
+                <VBox spacing="10">
+
+                    <!-- start / continuation (integers) -->
+                    <GridPane hgap="8" vgap="6">
+                        <columnConstraints>
+                            <ColumnConstraints halignment="RIGHT" minWidth="90"/>
+                            <ColumnConstraints hgrow="ALWAYS"/>
+                            <ColumnConstraints halignment="RIGHT" minWidth="110"/>
+                            <ColumnConstraints hgrow="ALWAYS"/>
+                        </columnConstraints>
+
+                        <Label text="start" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                        <Spinner editable="true" fx:id="pStartSpinner" GridPane.rowIndex="0" GridPane.columnIndex="1">
+                            <valueFactory>
+                                <SpinnerValueFactory.IntegerSpinnerValueFactory min="0" max="1000000" initialValue="100"/>
+                            </valueFactory>
+                        </Spinner>
+
+                        <Label text="continuation" GridPane.rowIndex="0" GridPane.columnIndex="2"/>
+                        <Spinner editable="true" fx:id="pContinuationSpinner" GridPane.rowIndex="0" GridPane.columnIndex="3">
+                            <valueFactory>
+                                <SpinnerValueFactory.IntegerSpinnerValueFactory min="0" max="1000000" initialValue="100"/>
+                            </valueFactory>
+                        </Spinner>
+                    </GridPane>
+
+                    <Separator/>
+
+                    <!-- P list -->
+                    <VBox spacing="6">
+                        <CheckBox fx:id="p1CheckBox" text="P1 — egalitarian quantizer"/>
+                        <CheckBox fx:id="p2CheckBox" text="P2 — one-shot rational equilibrium" selected="true"/>
+                        <CheckBox fx:id="p3CheckBox" text="P3 — random constrained"/>
+                        <CheckBox fx:id="p4CheckBox" text="P4 — local mutation of previous success" selected="true"/>
+                    </VBox>
+
+                </VBox>
+            </content>
+        </TitledPane>
+
+        <!-- PR PROJECTION ALGOS -->
+        <TitledPane text="PR projection algos" expanded="true">
+            <content>
+                <VBox spacing="10">
+
+                    <!-- start / continuation (integers) -->
+                    <GridPane hgap="8" vgap="6">
+                        <columnConstraints>
+                            <ColumnConstraints halignment="RIGHT" minWidth="90"/>
+                            <ColumnConstraints hgrow="ALWAYS"/>
+                            <ColumnConstraints halignment="RIGHT" minWidth="110"/>
+                            <ColumnConstraints hgrow="ALWAYS"/>
+                        </columnConstraints>
+
+                        <Label text="start" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                        <Spinner editable="true" fx:id="prStartSpinner" GridPane.rowIndex="0" GridPane.columnIndex="1">
+                            <valueFactory>
+                                <SpinnerValueFactory.IntegerSpinnerValueFactory min="0" max="1000000" initialValue="100"/>
+                            </valueFactory>
+                        </Spinner>
+
+                        <Label text="continuation" GridPane.rowIndex="0" GridPane.columnIndex="2"/>
+                        <Spinner editable="true" fx:id="prContinuationSpinner" GridPane.rowIndex="0" GridPane.columnIndex="3">
+                            <valueFactory>
+                                <SpinnerValueFactory.IntegerSpinnerValueFactory min="0" max="1000000" initialValue="100"/>
+                            </valueFactory>
+                        </Spinner>
+                    </GridPane>
+
+                    <Separator/>
+
+                    <!-- PR list -->
+                    <VBox spacing="6">
+                        <CheckBox fx:id="pr1CheckBox" text="PR1 — increase payment for key players" selected="true"/>
+                        <CheckBox fx:id="pr2CheckBox" text="PR2 — local mutation of previous PR"/>
+                    </VBox>
+
+                </VBox>
+            </content>
+        </TitledPane>
+        <!-- V ALGOS -->
+        <TitledPane text="V algos" expanded="true">
+            <content>
+                <VBox spacing="10">
+
+                    <!-- start / continuation (integers) -->
+                    <GridPane hgap="8" vgap="6">
+                        <columnConstraints>
+                            <ColumnConstraints halignment="RIGHT" minWidth="90"/>
+                            <ColumnConstraints hgrow="ALWAYS"/>
+                            <ColumnConstraints halignment="RIGHT" minWidth="110"/>
+                            <ColumnConstraints hgrow="ALWAYS"/>
+                        </columnConstraints>
+
+                        <Label text="start" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                        <Spinner editable="true" fx:id="vStartSpinner" GridPane.rowIndex="0" GridPane.columnIndex="1">
+                            <valueFactory>
+                                <SpinnerValueFactory.IntegerSpinnerValueFactory min="0" max="1000000" initialValue="100"/>
+                            </valueFactory>
+                        </Spinner>
+
+                        <Label text="continuation" GridPane.rowIndex="0" GridPane.columnIndex="2"/>
+                        <Spinner editable="true" fx:id="vContinuationSpinner" GridPane.rowIndex="0" GridPane.columnIndex="3">
+                            <valueFactory>
+                                <SpinnerValueFactory.IntegerSpinnerValueFactory min="0" max="1000000" initialValue="100"/>
+                            </valueFactory>
+                        </Spinner>
+                    </GridPane>
+
+                    <Separator/>
+
+                    <!-- V list -->
+                    <VBox spacing="6">
+                        <CheckBox fx:id="v1CheckBox" text="V1 — deterministic self-interest"/>
+                        <CheckBox fx:id="v2CheckBox" text="V2 — threshold with fairness sensitivity"/>
+                        <CheckBox fx:id="v3CheckBox" text="V3 — probabilistic logit"/>
+                        <CheckBox fx:id="v4CheckBox" text="V4 — rule-based coalition mimic"/>
+
+                        <!-- V5 with k range -->
+                        <VBox spacing="4">
+                            <HBox spacing="10" alignment="CENTER_LEFT">
+                                <CheckBox fx:id="v5CheckBox" text="V5 — KD" selected="true"/>
+                            </HBox>
+                            <HBox spacing="6" alignment="CENTER_LEFT" style="-fx-padding: 0 0 0 20;">
+                                <Label text="k from"/>
+                                <Spinner editable="true" fx:id="v5KFromSpinner">
+                                    <valueFactory>
+                                        <SpinnerValueFactory.IntegerSpinnerValueFactory min="4" max="8" initialValue="0"/>
+                                    </valueFactory>
+                                </Spinner>
+                                <Label text="to"/>
+                                <Spinner editable="true" fx:id="v5KToSpinner">
+                                    <valueFactory>
+                                        <SpinnerValueFactory.IntegerSpinnerValueFactory min="4" max="8" initialValue="8"/>
+                                    </valueFactory>
+                                </Spinner>
+                            </HBox>
+                        </VBox>
+
+                        <!-- V6 with k range -->
+                        <VBox spacing="4">
+                            <HBox spacing="10" alignment="CENTER_LEFT">
+                                <CheckBox fx:id="v6CheckBox" text="V6 — KDC" selected="true"/>
+                            </HBox>
+                            <HBox spacing="6" alignment="CENTER_LEFT" style="-fx-padding: 0 0 0 20;">
+                                <Label text="k from"/>
+                                <Spinner editable="true" fx:id="v6KFromSpinner">
+                                    <valueFactory>
+                                        <SpinnerValueFactory.IntegerSpinnerValueFactory min="4" max="8" initialValue="0"/>
+                                    </valueFactory>
+                                </Spinner>
+                                <Label text="to"/>
+                                <Spinner editable="true" fx:id="v6KToSpinner">
+                                    <valueFactory>
+                                        <SpinnerValueFactory.IntegerSpinnerValueFactory min="4" max="8" initialValue="8"/>
+                                    </valueFactory>
+                                </Spinner>
+                            </HBox>
+                        </VBox>
+
+                    </VBox>
+
+                </VBox>
+            </content>
+        </TitledPane>
+
+        <!-- ACTION BUTTONS -->
+        <VBox spacing="12" alignment="CENTER">
+            <Separator/>
+
+<!--            <Button fx:id="gotoLifeAwarenessButton"-->
+<!--                    text="GOTO life awareness page"-->
+<!--                    prefWidth="260"/>-->
+
+            <Button fx:id="startButton"
+                    text="START"
+                    prefWidth="180"
+                    style="-fx-font-size: 16; -fx-font-weight: bold;"
+                    onAction="#onStartClicked"/>
+
+            <Button text="Save config" onAction="#onSaveConfigClicked"/>
+
+            <Label fx:id="resultLabel" text="-" />
+        </VBox>
+    </VBox>
+
+    </HBox>
+    </content>
+</ScrollPane>
